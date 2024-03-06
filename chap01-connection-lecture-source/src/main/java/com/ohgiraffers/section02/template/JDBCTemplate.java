@@ -44,5 +44,25 @@ public class JDBCTemplate {
 
     }
 
+    public static void close(Connection con) {
+
+        /* 필기.
+        *   위에 getConnection() 으로 생성한 커넥션을
+        *   매개변수로 받아 닫아주는 역할을 한다.
+        *   자원 반납 시에는 null 체크여부, 이미 반납 된 자원이 아닌 지 확인을 해야 한다.
+        *  */
+
+        try {
+            if(con != null && !con.isClosed()) {
+
+                con.close();
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 }
