@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import static com.ohgiraffers.common.JDBCTemplate.close;
 import static com.ohgiraffers.common.JDBCTemplate.getConnection;
 
 public class Application01 {
@@ -42,6 +43,10 @@ public class Application01 {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            close(con);
+            close(stmt);
+            close(rset);
         }
 
     }
