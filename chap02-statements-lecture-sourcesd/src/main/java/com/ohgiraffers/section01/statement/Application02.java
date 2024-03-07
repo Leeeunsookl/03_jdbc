@@ -40,6 +40,10 @@ public class Application02 {
             String empId = "202";
             String query = "SELECT EMP_ID, EMP_NAME FROM EMPLOYEE WHERE EMP_ID = '" + empId + "'";
 
+            // 5. executeQuery() 로 쿼리문을 실행하고 결과를 ResultSet 으로 반환받음
+            rset = stmt.executeQuery(query);
+
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
