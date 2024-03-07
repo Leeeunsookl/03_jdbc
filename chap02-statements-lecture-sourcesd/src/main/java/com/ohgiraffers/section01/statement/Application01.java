@@ -31,7 +31,14 @@ public class Application01 {
             /* 필기. connection을 이용해서 statement 인스턴스 생성 */
             stmt = con.createStatement();
 
+            /* 필기. executeQuery() 메소드를 호출해서 SQL문을 수행(SQL문을 String 형태로 전달) */
+            rset = stmt.executeQuery("SELECT EMP_ID, EMP_NAME FROM EMPLOYEE");
 
+            while(rset.next()) {
+
+                /* 필기. next() : ResultSet 의 커서 위치를 하나씩 내리면서 행이 존재하면 true */
+                System.out.println(rset.getString("EMP_ID") + " , " + rset.getString("EMP_NAME"));
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
