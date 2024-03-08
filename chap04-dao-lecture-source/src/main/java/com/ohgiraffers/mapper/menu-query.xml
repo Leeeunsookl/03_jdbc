@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="selectLastMenuCode">
+        SELECT
+            MAX(MENU_CODE)
+        FROM
+            TBL_MENU
+    </entry>
+    <entry key="selectAllCategoryList">
+        SELECT
+            CATEGORY_CODE,
+            CATEGORY_NAME
+        FROM
+            TBL_MENU
+    </entry>
+</properties>
